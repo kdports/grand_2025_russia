@@ -18,6 +18,187 @@ focus_tree = {
 	continuous_focus_position = { x = 55 y = 1500 }
 
 	focus = {
+		id = portinga_russia_airbase_expansion
+
+		icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
+		x = 5
+		y = 5
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		available = {}
+        completion_reward = {
+            10 = {
+                add_building_construction = {
+                    type = air_base
+                    level = 3
+                    instant_build = yes
+                    province = 3544
+                }
+            }
+            137 = {
+                add_building_construction = {
+                    type = air_base
+                    level = 3
+                    instant_build = yes
+                    province = 3686
+                }
+            }
+            231 = {
+                add_building_construction = {
+                    type = air_base
+                    level = 3
+                    instant_build = yes
+                    province = 772
+                }
+            }
+            230 = {
+                add_building_construction = {
+                    type = air_base
+                    level = 3
+                    instant_build = yes
+                    province = 6642
+                }
+            }
+        }
+    }
+
+	focus = {
+		id = portinga_russia_light_air_research
+
+		icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
+		x = -2
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = portinga_russia_airbase_expansion }
+        relative_position_id = portinga_russia_airbase_expansion
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		available = {}
+        completion_reward = {
+            add_tech_bonus = {
+                bonus = 1.5
+                uses = 2
+                category = light_air
+            }
+        }
+    }
+
+	focus = {
+		id = portinga_russia_ground_crew_tech
+
+		icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
+		x = -1
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = portinga_russia_light_air_research }
+        relative_position_id = portinga_russia_light_air_research
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		available = {}
+        completion_reward = {
+            add_tech_bonus = {
+                bonus = 3
+                uses = 2
+                category = air_equipment
+            }
+        }
+    }
+
+	focus = {
+		id = portinga_russia_medium_air_research
+
+		icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
+		x = 0
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = portinga_russia_airbase_expansion }
+        relative_position_id = portinga_russia_airbase_expansion
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		available = {}
+        completion_reward = {
+            add_tech_bonus = {
+                bonus = 1.5
+                uses = 2
+                category = medium_air
+            }
+        }
+    }
+
+	focus = {
+		id = portinga_russia_heavy_air_research
+
+		icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
+		x = 2
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = portinga_russia_airbase_expansion }
+        relative_position_id = portinga_russia_airbase_expansion
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		available = {}
+        completion_reward = {
+            add_tech_bonus = {
+                bonus = 1.5
+                uses = 2
+                category = heavy_air
+            }
+        }
+    }
+
+	focus = {
+		id = portinga_russia_air_doctrine_cheap
+
+		icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
+		x = 3
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = portinga_russia_light_air_research focus = portinga_russia_medium_air_research focus = portinga_russia_heavy_air_research }
+        relative_position_id = portinga_russia_light_air_research
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		available = {}
+        completion_reward = {
+            add_doctrine_cost_reduction = {
+                cost_reduction = 0.5
+                uses = 2
+                category = air_doctrine
+            }
+        }
+    }
+
+	focus = {
 		id = portinga_russia_solicit_wives
 
 		icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
@@ -68,6 +249,9 @@ focus_tree = {
             hidden_effect = {
                 load_oob = "serbian_marriage"
             }
+            108 = { add_core_of = SOV }
+            107 = { add_core_of = SOV }
+            764 = { add_core_of = SOV }
         }
     }
     
@@ -97,6 +281,9 @@ focus_tree = {
         completion_reward = {
             add_political_power = 50
             add_offsite_building = { type = industrial_complex level = 2 }
+            64 = { add_core_of = SOV }
+            68 = { add_core_of = SOV }
+            65 = { add_core_of = SOV }
         }
     }
     
@@ -135,6 +322,9 @@ focus_tree = {
                 planning_skill = 6
                 logistics_skill = 6
             }
+            37 = { add_core_of = SOV }
+            911 = { add_core_of = SOV }
+            99 = { add_core_of = SOV }
         }
     }
     
@@ -163,14 +353,20 @@ focus_tree = {
         }
         completion_reward = {
             add_political_power = 50
-            219 = {
-                add_resource = {
-                    type = oil
-                    amount = 30
-                }
-                add_resource = {
-                    type = rubber
-                    amount = 30
+            274 = { add_core_of = SOV }
+            777 = { add_core_of = SOV }
+            776 = { add_core_of = SOV }
+            custom_effect_tooltip = "...But, like, why?"
+            hidden_effect = {
+                219 = {
+                    add_resource = {
+                        type = oil
+                        amount = 30
+                    }
+                    add_resource = {
+                        type = rubber
+                        amount = 30
+                    }
                 }
             }
         }
@@ -471,6 +667,90 @@ focus_tree = {
                 add_state_modifier = {
                     modifier = {
                         local_resources = 1.5
+                    }
+                }
+            }
+        }
+    }
+    
+	focus = {
+		id = portinga_vladivostok_investment
+
+		icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
+		prerequisite = { focus = portinga_european_steelworks }
+		mutually_exclusive = { }
+        relative_position_id = portinga_european_steelworks
+		x = 3
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+        completion_reward = {
+            408 = {
+                add_state_modifier = {
+                    modifier = {
+                        local_building_slots = 4
+                        army_speed_factor_for_controller = 0.3
+                        enemy_army_speed_factor = -0.6
+                    }
+                }
+                custom_effect_tooltip = "Forts will be constructed on the city of Vladivostok."
+                hidden_effect = {
+                    add_building_construction = {
+                        type = bunker
+                        level = 4
+                        instant_build = yes
+                        province = {
+                            all_provinces = yes
+                            limit_to_supply_node = yes
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+	focus = {
+		id = portinga_alaska_investment
+
+		icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
+		prerequisite = { focus = portinga_european_steelworks }
+		mutually_exclusive = { }
+        relative_position_id = portinga_european_steelworks
+		x = -3
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+        completion_reward = {
+            463 = {
+                add_state_modifier = {
+                    modifier = {
+                        local_supplies = 0.5
+                    }
+                }
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                    instant_build = yes
+                }
+                custom_effect_tooltip = "Ports will be constructed."
+                hidden_effect = {
+                    add_building_construction = {
+                        type = naval_base
+                        level = 4
+                        instant_build = yes
+                        province = 13091
                     }
                 }
             }
