@@ -1,0 +1,177 @@
+### search_filters = {FOCUS_FILTER_POLITICAL}
+
+focus_tree = {
+	id = grand_2025_russia_focus
+
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 15
+			tag = SOV
+		}
+	}
+	
+	default = no
+
+	continuous_focus_position = { x = 55 y = 1500 }
+
+	focus = {
+		id = portinga_russia_solicit_wives
+
+		icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
+		x = 5
+		y = 0
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		available = {}
+        completion_reward = {
+            add_political_power = 50
+            custom_effect_tooltip = portinga_russia_marriage_proposals_tt
+            country_event = portinga_russia_events.01
+        }
+    }
+    
+	focus = {
+		id = portinga_russia_the_serbian_princess
+
+		icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
+		prerequisite = { focus = portinga_russia_solicit_wives }
+		mutually_exclusive = { focus = portinga_russia_the_german_princess focus = portinga_russia_the_polish_princess focus = portinga_russia_the_yoruba_princess }
+        relative_position_id = portinga_russia_solicit_wives
+		x = -3
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		available = {
+            custom_trigger_tooltip = {
+                tooltip = "The Tsar has received all the solicitations."
+                has_country_flag = portinga_russia_ready_for_wife
+            }
+        }
+        completion_reward = {
+            add_political_power = 50
+            custom_effect_tooltip = portinga_russia_serbian_dowry_tt
+            hidden_effect = {
+                load_oob = "serbian_marriage"
+            }
+        }
+    }
+    
+	focus = {
+		id = portinga_russia_the_german_princess
+
+		icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
+		prerequisite = { focus = portinga_russia_solicit_wives }
+		mutually_exclusive = { focus = portinga_russia_the_serbian_princess focus = portinga_russia_the_polish_princess focus = portinga_russia_the_yoruba_princess }
+        relative_position_id = portinga_russia_solicit_wives
+		x = -1
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		available = {
+            custom_trigger_tooltip = {
+                tooltip = "The Tsar has received all the solicitations."
+                has_country_flag = portinga_russia_ready_for_wife
+            }
+        }
+        completion_reward = {
+            add_political_power = 50
+            add_offsite_building = { type = industrial_complex level = 2 }
+        }
+    }
+    
+	focus = {
+		id = portinga_russia_the_polish_princess
+
+		icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
+		prerequisite = { focus = portinga_russia_solicit_wives }
+		mutually_exclusive = { focus = portinga_russia_the_serbian_princess focus = portinga_russia_the_german_princess focus = portinga_russia_the_yoruba_princess }
+        relative_position_id = portinga_russia_solicit_wives
+		x = 1
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		available = {
+            custom_trigger_tooltip = {
+                tooltip = "The Tsar has received all the solicitations."
+                has_country_flag = portinga_russia_ready_for_wife
+            }
+        }
+        completion_reward = {
+            add_political_power = 50
+            create_corps_commander = {
+                name = "Gerald Mikhealin"
+                picture = "Portrait_France_Jean_de_Lattre_de_Tassigny.dds"
+                traits = { trickster brilliant_strategist }
+                skill = 6
+                attack_skill = 6
+                defense_skill = 6
+                planning_skill = 6
+                logistics_skill = 6
+            }
+        }
+    }
+    
+	focus = {
+		id = portinga_russia_the_yoruba_princess
+
+		icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
+		prerequisite = { focus = portinga_russia_solicit_wives }
+		mutually_exclusive = { focus = portinga_russia_the_serbian_princess focus = portinga_russia_the_german_princess focus = portinga_russia_the_polish_princess }
+        relative_position_id = portinga_russia_solicit_wives
+		x = 3
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		available = {
+            custom_trigger_tooltip = {
+                tooltip = "The Tsar has received all the solicitations."
+                has_country_flag = portinga_russia_ready_for_wife
+            }
+        }
+        completion_reward = {
+            add_political_power = 50
+            219 = {
+                add_resource = {
+                    type = oil
+                    amount = 30
+                }
+                add_resource = {
+                    type = rubber
+                    amount = 30
+                }
+            }
+        }
+    }
+}

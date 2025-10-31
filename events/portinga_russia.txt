@@ -1,0 +1,97 @@
+add_namespace = portinga_russia_events
+
+country_event = { # First letter, from Serbia
+	id = portinga_russia_events.01
+	title = portinga_russia_events.01.t
+	desc = portinga_russia_events.01.desc
+	picture = GFX_report_event_stalin_01
+	
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	immediate = {
+		
+	}
+
+	option = { 
+		name = portinga_russia_events.01.a # Allying with Serbia gets you bonus divisions
+        country_event = {
+            id = portinga_russia_events.02
+            days = 10
+            random_hours = 12
+            random_days = 10
+        }
+	}
+}
+
+country_event = { # Second letter, from Praha/Germany
+	id = portinga_russia_events.02
+	title = portinga_russia_events.02.t
+	desc = portinga_russia_events.02.desc
+	picture = GFX_report_event_stalin_01
+	
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	immediate = {
+		
+	}
+
+	option = { 
+		name = portinga_russia_events.02.a # Allying with the Germans gets you offmap civ factories
+        country_event = {
+            id = portinga_russia_events.03
+            days = 10
+            random_hours = 12
+            random_days = 10
+        }
+	}
+}
+
+country_event = { # Third letter, from Poland
+	id = portinga_russia_events.03
+	title = portinga_russia_events.03.t
+	desc = portinga_russia_events.03.desc
+	picture = GFX_report_event_stalin_01
+	
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	immediate = {
+		
+	}
+
+	option = { 
+		name = portinga_russia_events.03.a # Allying with Poland gets you a really good general
+        country_event = {
+            id = portinga_russia_events.04
+            days = 10
+            random_hours = 12
+            random_days = 10
+        }
+	}
+}
+
+country_event = { # Fourth letter, from Oyo
+	id = portinga_russia_events.04
+	title = portinga_russia_events.04.t
+	desc = portinga_russia_events.04.desc
+	picture = GFX_report_event_stalin_01
+	
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	immediate = {
+		
+	}
+
+	option = { 
+		name = portinga_russia_events.04.a # Allying with Yorubaland (?) gets you a ton of offmap oil/rubber
+        set_country_flag = portinga_russia_ready_for_wife
+        custom_effect_tooltip = "The Prince may now choose his wife."
+	}
+}
