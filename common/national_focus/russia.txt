@@ -1,4 +1,5 @@
 ### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
 
 focus_tree = {
 	id = grand_2025_russia_focus
@@ -170,6 +171,307 @@ focus_tree = {
                 add_resource = {
                     type = rubber
                     amount = 30
+                }
+            }
+        }
+    }
+
+	focus = {
+		id = portinga_russia_new_dev_plan
+
+		icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
+		x = 13
+		y = 0
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		available = {}
+        completion_reward = {
+            237 = {
+                add_building_construction = {
+                    type = infrastructure
+                    level = 2
+                    instant_build = yes
+                }
+            }
+            235 = {
+                add_building_construction = {
+                    type = infrastructure
+                    level = 2
+                    instant_build = yes
+                }
+            }
+            232 = {
+                add_building_construction = {
+                    type = infrastructure
+                    level = 2
+                    instant_build = yes
+                }
+            }
+        }
+    }
+    
+	focus = {
+		id = portinga_eastern_industry
+
+		icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
+		prerequisite = { focus = portinga_russia_new_dev_plan }
+		mutually_exclusive = { }
+        relative_position_id = portinga_russia_new_dev_plan
+		x = 1
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+        completion_reward = {
+            583 = {
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                    instant_build = yes
+                }
+                add_extra_state_shared_building_slots = 2
+            }
+            572 = {
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                    instant_build = yes
+                }
+                add_extra_state_shared_building_slots = 1
+            }
+        }
+    }
+    
+	focus = {
+		id = portinga_oil_improvements
+
+		icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
+		prerequisite = { focus = portinga_russia_new_dev_plan }
+		mutually_exclusive = { }
+        relative_position_id = portinga_russia_new_dev_plan
+		x = -1
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+        completion_reward = {
+            modify_building_resources = {
+                building = synthetic_refinery
+                resource = oil
+                amount = 2
+            }
+        }
+    }
+    
+	focus = {
+		id = portinga_excavate_southern_regions
+
+		icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
+		prerequisite = { focus = portinga_eastern_industry }
+		mutually_exclusive = { }
+        relative_position_id = portinga_eastern_industry
+		x = 0
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+        completion_reward = {
+            # Add building slots to Caucasus
+            229 = {
+                add_extra_state_shared_building_slots = 3
+            }
+            230 = {
+                add_extra_state_shared_building_slots = 3
+            }
+            231 = {
+                add_extra_state_shared_building_slots = 3
+            }
+        }
+    }
+    
+	focus = {
+		id = portinga_moscow_arms_industry
+
+		icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
+		prerequisite = { focus = portinga_eastern_industry }
+		mutually_exclusive = { }
+        relative_position_id = portinga_eastern_industry
+		x = 2
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+        completion_reward = {
+            # Add building slots to Caucasus
+            219 = {
+                add_building_construction = {
+                    type = arms_factory
+                    level = 3
+                    instant_build = yes
+                }
+                add_extra_state_shared_building_slots = 3
+            }
+        }
+    }
+    
+	focus = {
+		id = portinga_improve_construction_tech
+
+		icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
+		prerequisite = { focus = portinga_oil_improvements }
+		mutually_exclusive = { }
+        relative_position_id = portinga_oil_improvements
+		x = 0
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+        completion_reward = {
+            add_tech_bonus = {
+                bonus = 1.0
+                uses = 1
+                category = construction_tech
+            }
+        }
+    }
+    
+	focus = {
+		id = portinga_improve_steelworks
+
+		icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
+		prerequisite = { focus = portinga_oil_improvements }
+		mutually_exclusive = { }
+        relative_position_id = portinga_oil_improvements
+		x = -2
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+        completion_reward = {
+            829 = {
+                add_resource = {
+                    type = steel
+                    amount = 20
+                }
+            }
+        }
+    }
+    
+	focus = {
+		id = portinga_european_steelworks
+
+		icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
+		prerequisite = { focus = portinga_excavate_southern_regions }
+		prerequisite = { focus = portinga_improve_construction_tech  }
+		mutually_exclusive = { }
+        relative_position_id = portinga_improve_construction_tech
+		x = 1
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+        completion_reward = {
+            10 = {
+                add_resource = {
+                    type = steel
+                    amount = 25
+                }
+            }
+        }
+    }
+    
+	focus = {
+		id = portinga_european_investment
+
+		icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
+		prerequisite = { focus = portinga_european_steelworks }
+		mutually_exclusive = { }
+        relative_position_id = portinga_european_steelworks
+		x = -1
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+        completion_reward = {
+            10 = {
+                add_state_modifier = {
+                    modifier = {
+                        local_resources = 1.5
+                    }
+                }
+            }
+        }
+    }
+    
+	focus = {
+		id = portinga_finnish_investment
+
+		icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
+		prerequisite = { focus = portinga_european_steelworks }
+		mutually_exclusive = { }
+        relative_position_id = portinga_european_steelworks
+		x = 1
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+        completion_reward = {
+            148 = {
+                add_state_modifier = {
+                    modifier = {
+                        local_resources = 1.5
+                    }
                 }
             }
         }
