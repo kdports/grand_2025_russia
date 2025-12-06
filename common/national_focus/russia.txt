@@ -6,16 +6,93 @@ focus_tree = {
 
 	country = {
 		factor = 0
-		
+
 		modifier = {
 			add = 15
 			tag = SOV
 		}
 	}
-	
+
 	default = no
 
 	continuous_focus_position = { x = 55 y = 1500 }
+
+	focus = {
+		id = portinga_russia_new_military_ideas
+
+		icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
+		x = 16
+		y = 5
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		available = {}
+        completion_reward = {
+            add_tech_bonus = {
+                bonus = 1.0
+                uses = 1
+                category = land_doctrine
+            }
+            army_experience = 100
+        }
+    }
+
+	focus = {
+		id = portinga_russia_wave_tactics
+
+		icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
+		x = -2
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = portinga_russia_new_military_ideas }
+        relative_position_id = portinga_russia_new_military_ideas
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		available = {}
+        completion_reward = {
+            add_tech_bonus = {
+                bonus = 1.0
+                uses = 2
+                category = cat_mass_assault
+            }
+        }
+    }
+
+	focus = {
+		id = portinga_russia_armored_approach
+
+		icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
+		x = 2
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = portinga_russia_new_military_ideas }
+        relative_position_id = portinga_russia_new_military_ideas
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		available = {}
+        completion_reward = {
+            add_tech_bonus = {
+                bonus = 1.0
+                uses = 2
+                category = cat_deep_battle
+            }
+        }
+    }
 
 	focus = {
 		id = portinga_russia_warm_water_ports
@@ -115,6 +192,7 @@ focus_tree = {
 		available = {}
         completion_reward = {
             add_equipment_bonus = {
+                name = "Submarine Improvements"
                 bonus = {
                     ship_hull_submarine = { # Type of equipment
                         naval_speed = 0.15
@@ -324,7 +402,7 @@ focus_tree = {
             country_event = portinga_russia_events.01
         }
     }
-    
+
 	focus = {
 		id = portinga_russia_the_serbian_princess
 
@@ -359,7 +437,7 @@ focus_tree = {
             764 = { add_core_of = SOV }
         }
     }
-    
+
 	focus = {
 		id = portinga_russia_the_german_princess
 
@@ -391,7 +469,7 @@ focus_tree = {
             65 = { add_core_of = SOV }
         }
     }
-    
+
 	focus = {
 		id = portinga_russia_the_polish_princess
 
@@ -432,7 +510,7 @@ focus_tree = {
             99 = { add_core_of = SOV }
         }
     }
-    
+
 	focus = {
 		id = portinga_russia_the_yoruba_princess
 
@@ -516,7 +594,135 @@ focus_tree = {
             }
         }
     }
-    
+
+
+	focus = {
+		id = portinga_russia_infrastructure_effort_nsb
+
+		icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
+		x = 3
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+			custom_trigger_tooltip =  {
+				tooltip = infrastructure_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = infrastructure
+						size < 2
+					}
+				}
+			}
+		}
+		prerequisite = { focus = portinga_russia_new_dev_plan }
+		mutually_exclusive = { }
+        relative_position_id = portinga_russia_new_dev_plan
+
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+
+		complete_tooltip = {
+			every_state = {
+				limit = { has_state_flag = SOV_infrastructure_effort_3Inf }
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					all_owned_state = {
+						infrastructure > 2
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = infrastructure
+							size > 1
+						}
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+					set_state_flag = SOV_infrastructure_effort_3Inf
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = infrastructure
+							size > 1
+						}
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+					set_state_flag = SOV_infrastructure_effort_3Inf
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					infrastructure < 3
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = SOV_infrastructure_effort_3Inf
+			}
+			random_owned_controlled_state = {
+				limit = {
+					infrastructure < 3
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = SOV_infrastructure_effort_3Inf
+			}
+			random_owned_controlled_state = {
+				limit = {
+					infrastructure < 3
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = SOV_infrastructure_effort_3Inf
+			}
+			random_owned_controlled_state = {
+				limit = {
+					infrastructure < 3
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = SOV_infrastructure_effort_3Inf
+			}
+		}
+	}
+
 	focus = {
 		id = portinga_eastern_industry
 
@@ -553,7 +759,7 @@ focus_tree = {
             }
         }
     }
-    
+
 	focus = {
 		id = portinga_oil_improvements
 
@@ -579,7 +785,7 @@ focus_tree = {
             }
         }
     }
-    
+
 	focus = {
 		id = portinga_excavate_southern_regions
 
@@ -610,7 +816,7 @@ focus_tree = {
             }
         }
     }
-    
+
 	focus = {
 		id = portinga_moscow_arms_industry
 
@@ -640,7 +846,7 @@ focus_tree = {
             }
         }
     }
-    
+
 	focus = {
 		id = portinga_improve_construction_tech
 
@@ -666,7 +872,7 @@ focus_tree = {
             }
         }
     }
-    
+
 	focus = {
 		id = portinga_improve_steelworks
 
@@ -693,7 +899,7 @@ focus_tree = {
             }
         }
     }
-    
+
 	focus = {
 		id = portinga_european_steelworks
 
@@ -721,7 +927,7 @@ focus_tree = {
             }
         }
     }
-    
+
 	focus = {
 		id = portinga_european_investment
 
@@ -749,7 +955,7 @@ focus_tree = {
             }
         }
     }
-    
+
 	focus = {
 		id = portinga_finnish_investment
 
@@ -777,7 +983,7 @@ focus_tree = {
             }
         }
     }
-    
+
 	focus = {
 		id = portinga_vladivostok_investment
 
@@ -819,7 +1025,7 @@ focus_tree = {
             }
         }
     }
-    
+
 	focus = {
 		id = portinga_alaska_investment
 
