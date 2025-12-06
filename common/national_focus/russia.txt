@@ -60,10 +60,64 @@ focus_tree = {
 
 		available = {}
         completion_reward = {
+            army_experience = 25
             add_tech_bonus = {
                 bonus = 1.0
                 uses = 2
                 category = cat_mass_assault
+            }
+        }
+    }
+
+	focus = {
+		id = portinga_russia_infantry_training
+
+		icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
+		x = 0
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = portinga_russia_wave_tactics }
+        relative_position_id = portinga_russia_wave_tactics
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		available = {}
+        completion_reward = {
+            add_tech_bonus = {
+                bonus = 1.0
+                uses = 2
+                category = infantry_tech
+            }
+        }
+    }
+
+	focus = {
+		id = portinga_russia_artillery_training
+
+		icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
+		x = -2
+		y = 2
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = portinga_russia_wave_tactics }
+		prerequisite = { focus = portinga_russia_infantry_training }
+        relative_position_id = portinga_russia_wave_tactics
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		available = {}
+        completion_reward = {
+            add_tech_bonus = {
+                bonus = 1.0
+                uses = 2
+                category = artillery
             }
         }
     }
@@ -86,10 +140,64 @@ focus_tree = {
 
 		available = {}
         completion_reward = {
+            army_experience = 25
             add_tech_bonus = {
                 bonus = 1.0
                 uses = 2
                 category = cat_deep_battle
+            }
+        }
+    }
+
+	focus = {
+		id = portinga_russia_armored_development
+
+		icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
+		x = 0
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = portinga_russia_armored_approach }
+        relative_position_id = portinga_russia_armored_approach
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		available = {}
+        completion_reward = {
+            add_tech_bonus = {
+                bonus = 1.0
+                uses = 2
+                category = cat_medium_armor
+            }
+        }
+    }
+
+	focus = {
+		id = portinga_russia_heavy_armored_development
+
+		icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
+		x = 2
+		y = 2
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = portinga_russia_armored_approach }
+		prerequisite = { focus = portinga_russia_armored_development }
+        relative_position_id = portinga_russia_armored_approach
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		available = {}
+        completion_reward = {
+            add_tech_bonus = {
+                bonus = 1.0
+                uses = 2
+                category = cat_heavy_armor
             }
         }
     }
