@@ -3,4 +3,4 @@ tags={
 	"Alternative History"
 }
 name="Grand2025Russia"
-supported_version="1.16.10"
+supported_version="1.17.*"
