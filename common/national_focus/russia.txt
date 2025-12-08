@@ -123,6 +123,37 @@ focus_tree = {
     }
 
 	focus = {
+		id = portinga_russia_mass_gun_production
+
+		icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
+		x = 0
+		y = 2
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = portinga_russia_infantry_training }
+        relative_position_id = portinga_russia_infantry_training
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		available = {}
+        completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 400
+				producer = SOV
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 100
+				producer = SOV
+			}
+        }
+    }
+
+	focus = {
 		id = portinga_russia_armored_approach
 
 		icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
@@ -146,6 +177,37 @@ focus_tree = {
                 uses = 2
                 category = cat_deep_battle
             }
+        }
+    }
+
+	focus = {
+		id = portinga_russia_melt_guns_for_steel
+
+		icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
+		x = 0
+		y = 2
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = portinga_russia_armored_approach }
+        relative_position_id = portinga_russia_armored_approach
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		available = {}
+        completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -800
+				producer = SOV
+			}
+			add_equipment_to_stockpile = {
+				type = motorized_equipment
+				amount = 300
+				producer = SOV
+			}
         }
     }
 
@@ -434,6 +496,36 @@ focus_tree = {
                 uses = 2
                 category = medium_air
             }
+        }
+    }
+
+	focus = {
+		id = portinga_russia_the_tsar_skyline
+
+		icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
+		x = 0
+		y = 2
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = portinga_russia_medium_air_research }
+        relative_position_id = portinga_russia_medium_air_research
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		available = {}
+        completion_reward = {
+			create_equipment_variant = {
+				name = "Tsar's Skyline"
+				type = medium_plane_airframe
+				obsolete = no
+				upgrades = {
+					plane_engine_upgrade = 2
+					plane_range_upgrade = 3
+				}
+			}
         }
     }
 
